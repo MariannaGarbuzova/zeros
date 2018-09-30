@@ -15,8 +15,6 @@ module.exports = function getZerosCount(number) {
 function getCount(number, devider) {
   var count = 0;
   var reminder = 0;
-  //var number = number;
-  //Math.floor(reminder/coin.value)
   while (reminder == 0 && number >= devider) {
 
     reminder = number % devider;
@@ -29,6 +27,3 @@ function getCount(number, devider) {
 
   return count;
 }
-
-//var res = module.exports(84583674);
-//console.log(res);
