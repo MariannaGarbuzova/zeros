@@ -3,11 +3,10 @@ module.exports = function getZerosCount(number) {
   var twosCount = 0;
   var fivesCount = 0;
   for (let currentNumber = 2; currentNumber < number; currentNumber++) {
-    twosCount = twosCount + getCount(currentNumber, 2);
     fivesCount = fivesCount + getCount(currentNumber, 5);
   }
 
-  result = Math.min(twosCount, fivesCount);
+  result = fivesCount;
 
   return result;
 }
@@ -26,4 +25,39 @@ function getCount(number, devider) {
   }
 
   return count;
+}
+
+function getTwosCount(number) {
+  var binStr = number.toString(2);
+  var zeroCount = 0;
+  for (let i = binStr.length - 1; i > 0; i--) {
+    var char = binStr[i];
+    if (char == "0")
+    {
+      zeroCount++;
+    }
+    else {
+      break;
+    }
+  }
+
+  return zeroCount;
+}
+
+
+function getFivesCount(number) {
+  var binStr = number.toString(5);
+  var zeroCount = 0;
+  for (let i = binStr.length - 1; i > 0; i--) {
+    var char = binStr[i];
+    if (char == "0")
+    {
+      zeroCount++;
+    }
+    else {
+      break;
+    }
+  }
+
+  return zeroCount;
 }
